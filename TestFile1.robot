@@ -1,24 +1,18 @@
 *** Settings ***
-Library    QWeb
+
+Documentation           New test suite
+# You can change imported library to "QWeb" if testing generic web application, not Salesforce.
+Library                 QForce 
+Suite Setup             Open Browser    about:blank    chrome
+Suite Teardown          Close All Browsers
 
 *** Test Cases ***
+FireRobotFile2TestCase1
+    [Documentation]    Test Case created using the QEditor
+    [Tags]        Salesforce
+    OpenBrowser    https://www.salesforce.com/    chrome
 
-Open Salesforce
-    [Documentation]   Test Case created using the QEditor
-    [Tags]            Saelsforce
-    OpenBrowser       about:blank       chrome
-    GoTo              https://www.salesforce.com/
-    GoTo              https://www.Google.com/
-    VerifyText        testsalesorce1
-    GoTo              https://www.Copado.com/
-    VerifyText        testsalesorce1
-
-Open Salesforce1
-    [Documentation]   Test Case created using the QEditor
-    [Tags]            Saelsforce
-    OpenBrowser       about:blank       chrome
-    GoTo              https://www.salesforce.com/
-    GoTo              https://www.Google.com/
-    VerifyText        testsalesorce1
-    GoTo              https://www.Copado.com/
-    VerifyText        testsalesorce1
+FireRobotFile2TestCase2
+    [Documentation]    Test Case created using the QEditor
+    [Tags]        Amazon
+   GoTo   https://www.Amazon.com/
